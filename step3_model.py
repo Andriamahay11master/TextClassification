@@ -45,3 +45,31 @@ y_pred = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("\nClassification Report:\n")
 print(classification_report(y_test, y_pred))
+
+# -------------------------------
+# Predict new messages
+# -------------------------------
+
+def predict_message(message):
+    message_vector = vectorizer.transform([message])
+    prediction = model.predict(message_vector)[0]
+
+    if prediction == 1:
+        return "SPAM"
+    else:
+        return "HAM (Not Spam)"
+
+
+# Test messages
+test_messages = [
+    "Congratulations! You have won a free ticket",
+    "Hey, are we still meeting at 5?",
+    "URGENT! Claim your prize now",
+    "Can you send me the homework?"
+]
+
+for msg in test_messages:
+    print(f"Message: {msg}")
+    print("Prediction:", predict_message(msg))
+    print("-" * 40)
+
