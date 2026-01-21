@@ -92,6 +92,11 @@ button {
   &:hover {
     opacity: 0.95;
   }
+
+  &:disabled {
+    background: #a5b4fc;
+    cursor: not-allowed;
+  }
 }
 
 // ------------------------------
