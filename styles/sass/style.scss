@@ -1,15 +1,5 @@
-// ------------------------------
-// Variables
-// ------------------------------
-
-$bg-color: #f5f7fb;
-$card-bg: #ffffff;
-$primary: #4f46e5;
-$spam: #dc2626;
-$ham: #16a34a;
-$text-dark: #1f2937;
-$text-light: #6b7280;
-$border-radius: 12px;
+@import "variables";
+@import "mixins";
 
 // ------------------------------
 // Base styles
