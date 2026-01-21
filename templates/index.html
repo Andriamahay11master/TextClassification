@@ -13,12 +13,38 @@
         <h1>📨 Spam Detection AI</h1>
         <p class="subtitle">Type a message to see if it’s spam</p>
 
-        <form method="post">
-          <textarea name="message" placeholder="Enter your message...">
+        <form method="post" id="predictionForm">
+          <textarea
+            name="message"
+            id="messageInput"
+            placeholder="Enter your message..."
+            onkeydown="handleKeyPress(event)"
+            oninput="toggleButton()"
+          >
 {{ message }}</textarea
           >
-          <button type="submit">Predict</button>
+          <button type="submit" id="predictBtn" disabled>Predict</button>
         </form>
+
+        <script>
+          function handleKeyPress(event) {
+            if (event.key === "Enter") {
+              // Prevent the default action (inserting a new line)
+              event.preventDefault();
+              // Manually submit the form
+              document.getElementById("predictionForm").submit();
+            }
+          }
+
+          function toggleButton() {
+            const input = document.getElementById("messageInput");
+            const button = document.getElementById("predictBtn");
+            button.disabled = input.value.trim() === "";
+          }
+
+          // Check button state on page load
+          window.addEventListener("DOMContentLoaded", toggleButton);
+        </script>
 
         {% if prediction %}
         <div class="result {{ 'spam' if 'SPAM' in prediction else 'ham' }}">
