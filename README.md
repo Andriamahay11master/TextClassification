@@ -26,7 +26,7 @@ This project implements a **spam detection system** using scikit-learn and machi
 ├── package.json                 # Node.js dependencies (SASS)
 ├── templates/
 │   └── index.html              # Flask HTML template with responsive interface
-├── styles/
+├── assets/
 │   ├── css/
 │   │   └── style.css           # Compiled CSS styles
 │   └── sass/
@@ -41,8 +41,8 @@ This project implements a **spam detection system** using scikit-learn and machi
 
 - **app.py**: Main Flask application that trains the model and handles web requests
 - **templates/index.html**: Responsive HTML template with real-time prediction interface
-- **styles/css/style.css**: Compiled CSS stylesheet for professional styling
-- **styles/sass/**: SASS source files for maintainable stylesheet organization
+- **assets/css/style.css**: Compiled CSS stylesheet for professional styling
+- **assets/sass/**: SASS source files for maintainable stylesheet organization
   - `_variables.scss`: Color schemes, fonts, and spacing variables
   - `_mixins.scss`: Reusable SASS mixins for responsive design
   - `style.scss`: Main SASS stylesheet
@@ -113,7 +113,7 @@ If you modify the SASS files, recompile to CSS:
 ```bash
 npm run sass
 # or
-sass styles/sass/style.scss styles/css/style.css
+sass assets/sass/style.scss assets/css/style.css
 ```
 
 ## Dataset
