@@ -88,8 +88,16 @@ npm install
 
 Start the Flask web application:
 
+## Running locally (Windows)
+
 ```bash
 python app.py
+```
+
+## Running in production (Linux)
+
+```bash
+gunicorn app:app
 ```
 
 The application will:
